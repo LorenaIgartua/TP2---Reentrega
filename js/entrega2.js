@@ -9,12 +9,12 @@ let jugador2 = new Jugador ("Pepe", '#FF0000',910,2);
 jugador2.asignarFichas();
 let ficha2 = jugador2.presentarFicha();
 
-let tablero = new Tablero(220,80);
+let tablero = new Tablero(290,50);
 tablero.armarTablero();
 
 let arrastrar = false;
 let turno = 1;
-dibujarUnaEstrella(80,370);
+dibujarUnaEstrella(70,300);
 let fichaActual = null;
 
 let juego = true;
@@ -22,25 +22,26 @@ let juego = true;
 let imageUser = new Image();
 imageUser.src = "images/user.png";
 imageUser.onload = function() {
-  ctx.drawImage(imageUser, 20, 120, 120, 160);
-  ctx.drawImage(imageUser, 865, 120, 120, 160);
+  ctx.drawImage(imageUser, 20, 80, 90, 120);
+  ctx.drawImage(imageUser, 865, 80, 90, 120);
 }
 
 tablero.dibujarTablero();
 cargarImagenUsuario();
 ficha1.dibujarConImagen();
-console.log(ficha1.posY);
 ficha2.dibujarConImagen();
 let imagenFicha = new Image();
 imagenFicha.src = "images/ficha.png";
 imagenFicha.onload = function() {
-  ctx.drawImage(imagenFicha, 20, 0, 80, 80);
-  ctx.drawImage(imagenFicha, 870, 0, 80, 80);
+  ctx.drawImage(imagenFicha, 30, 10, 60, 60);
+  ctx.drawImage(imagenFicha, 880, 10, 60, 60);
 }
+document.getElementById("fichas1").innerHTML = jugador1.fichas.length;
+document.getElementById("fichas2").innerHTML = jugador2.fichas.length;
 
 function cargarImagenUsuario() {
-    ctx.drawImage(imageUser, 20, 120, 120, 160);
-    ctx.drawImage(imageUser, 865, 120, 120, 160);
+  ctx.drawImage(imageUser, 20, 80, 90, 120);
+  ctx.drawImage(imageUser, 865, 80, 90, 120);
 }
 
 document.getElementById("nuevo").addEventListener("click", function() {
@@ -53,7 +54,7 @@ document.getElementById("nuevo").addEventListener("click", function() {
     document.getElementById("resultados").innerHTML = "";
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     actualizarPanel();
-    dibujarUnaEstrella(80,370);
+    dibujarUnaEstrella(80,300);
 });
 
 function dibujarUnaEstrella(X, Y) {
@@ -63,8 +64,8 @@ function dibujarUnaEstrella(X, Y) {
 
     ctx.beginPath();
     for (let i = 0; i < 5; i++) {
-      x = X + 80 * Math.cos(rad * i);
-      y = Y + 80 * Math.sin(rad * i);
+      x = X + 60 * Math.cos(rad * i);
+      y = Y + 60 * Math.sin(rad * i);
       ctx.lineTo(x, y);
     }
     ctx.closePath();
@@ -91,11 +92,11 @@ function posicionMouse(canvas, event) {
 function cambiarTurno() {
   if (turno == 1) {
     turno = 2;
-    dibujarUnaEstrella(920,370);
+    dibujarUnaEstrella(920,300);
   }
   else {
     turno = 1;
-    dibujarUnaEstrella(80,370);
+    dibujarUnaEstrella(80,300);
   }
 }
 

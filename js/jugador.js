@@ -16,7 +16,7 @@ function Jugador (nombre, color, posX, orden)  {
 
 Jugador.prototype.asignarFichas = function () {
    for (let i=0; i < 21; i++) { //bucles para crear casilleros.
-      let aux = new Ficha (this.lado,40,35,this.color);
+      let aux = new Ficha (this.lado,40,25,this.color);
         this.fichas[i] = aux;
       }
 }

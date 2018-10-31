@@ -1,7 +1,7 @@
 function Ficha ()  {
   this.posX = 40;
   this.posY = 40;
-  this.radio = 35;
+  this.radio = 25;
   this.color = '#000000';
   this.jugada = false;
   this.image;
@@ -46,7 +46,7 @@ Ficha.prototype.dibujarConImagen = function () {
   let x = this.posX - this.radio - 5;
   let y = this.posY - this.radio - 5;
   // image.onload = function() {
-    ctx.drawImage(imagenFicha, x, y, 80, 80);
+    ctx.drawImage(imagenFicha, x, y, 60, 60);
   // }
 }
 

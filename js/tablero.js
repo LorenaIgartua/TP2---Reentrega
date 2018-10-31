@@ -15,7 +15,7 @@ Tablero.prototype.armarTablero = function ()  {
   for (let i=0; i < 7; i++) { //bucles para crear casilleros.
     let fila = new Array();
     for (let j=0; j < 6; j++) {
-        let aux = new Casillero(this.posInicioX + i*80, this.posInicioY + j*80);
+        let aux = new Casillero(this.posInicioX + i*60, this.posInicioY + j*60);
         fila[j] = aux;
         }
       this.matriz[i] = fila;

@@ -3,7 +3,7 @@ body {
 }
 
 .usuario {
-  font-size: 20px;
+  font-size: 15px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
     padding:0;
@@ -34,4 +34,5 @@ p {
 .logo {
   border-bottom: 2px solid black;
   margin: 0;
+  padding: 0;
 }
